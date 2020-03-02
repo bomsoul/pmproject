@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Firebase from '../Firebase';
 import { Icon } from 'semantic-ui-react'
 
+
 class ShowParent extends Component{
 
     constructor(props) {

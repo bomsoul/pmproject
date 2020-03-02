@@ -3,6 +3,7 @@ import { loadModels, getFullFaceDescription } from '../api/face';
 import { Image } from 'semantic-ui-react';
 import Firebase from '../Firebase';
 
+
 const INIT_STATE = {
     imageURL: null,
     fullDesc: null

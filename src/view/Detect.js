@@ -4,6 +4,7 @@ import Webcam from 'react-webcam';
 import Firebase from '../Firebase';
 import { loadModels, getFullFaceDescription, createMatcher } from '../api/face';
 
+
 var JSON_PROFILE = require('../profile.json');
 
 const WIDTH = 500;

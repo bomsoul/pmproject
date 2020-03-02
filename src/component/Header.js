@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import{Link} from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
-
+import Firebase from 'firebase';
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -9,7 +9,15 @@ class Header extends Component {
     }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
+    logout = e => {
+      e.preventDefault()
+      Firebase.auth().signOut().then(response => {
+        this.setState({
+          currentUser: null
+        })
+      })
+      window.location.href = "/";
+    }
 
     render() { 
         
@@ -38,14 +46,20 @@ class Header extends Component {
             />
           </Link>
           <Menu.Menu position='right'>
+          <Link to="/">
             <Menu.Item
               name='logout'
               active={this.state.activeItem === 'logout'}
-              onClick={this.handleItemClick}
+              onClick={this.logout}
+              
             />
+            </Link>
           </Menu.Menu>
+          
         </Menu>
+      
       </div>
+      
         )
     }
 }
