@@ -70,7 +70,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ## how to install project
 - open cmd
-- git clone (project).git
+- git clone https://github.com/bomsoul/pmproject.git
 - cd to project folder
 - npm install
 - npm start
