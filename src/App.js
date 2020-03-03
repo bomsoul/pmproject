@@ -13,10 +13,29 @@ import Pick from './view/Pick';
 import Login from './view/Login';
 import Firebase from 'firebase';
 
+var user = Firebase.auth().currentUser;
 class App extends Component {
-  render() {return(
-    <div className="ui container">
-      <Login></Login>
+  constructor(props){
+    super(props);
+    this.state = {
+      currentUser: user
+    }
+  }
+
+  componentDidMount() {
+    Firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({
+          currentUser: user
+        })
+      }
+    })
+  }
+  render() {
+    const {currentUser} = this.state
+    if(currentUser) {
+      return(
+        <div className="ui container">
       <Router>
           <Header/>
           <Switch>
@@ -31,6 +50,10 @@ class App extends Component {
           </Switch>
       </Router>
     </div>
+      )
+    }
+    return(
+      <Login/>
   )
 }
 }
