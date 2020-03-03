@@ -36,20 +36,20 @@ class App extends Component {
     if(currentUser) {
       return(
         <div className="ui container">
-      <Router>
-          <Header/>
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/detect" component={Detect}/>
-            <Route path="/addstudent" component={AddStudent}/>
-            <Route path="/addparent/:id" component={AddParent}/>
-            <Route path="/show/:id" component={Show}/>
-            <Route path="/edit/:id" component={Edit}/>
-            <Route path="/showparent/:id" component={ShowParent}/>
-            <Route path="/pick/:id" component={Pick}/>
-          </Switch>
-      </Router>
-    </div>
+          <Router>
+            <Header/>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route path="/detect" component={Detect}/>
+              <Route path="/addstudent" component={AddStudent}/>
+              <Route path="/addparent/:id" component={AddParent}/>
+              <Route path="/show/:id" component={Show}/>
+              <Route path="/edit/:id" component={Edit}/>
+              <Route path="/showparent/:id" component={ShowParent}/>
+              <Route path="/pick/:id" component={Pick}/>
+            </Switch>
+          </Router>
+        </div>
       )
     }
     return(
