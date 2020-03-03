@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import { Redirect } from 'react-router';
 import Webcam from 'react-webcam';
 import Firebase from '../Firebase';
 import { loadModels, getFullFaceDescription, createMatcher } from '../api/face';

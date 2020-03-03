@@ -1,7 +1,7 @@
 import React from 'react';
 import Firebase from '../Firebase';
 import App from '../App';
-import { Link ,BrowserRouter as Router,Route,Switch,Redirect} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 
 class Login extends React.Component {
