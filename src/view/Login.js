@@ -3,8 +3,53 @@ import Firebase from '../Firebase';
 import App from '../App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import { FormErrors } from './FormErrors';
 
 class Login extends React.Component {
+
+  handleUserInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({[name]: value},
+                  () => { this.validateField(name, value) });
+  }
+
+  validateField(fieldName, value) {
+    let fieldValidationErrors = this.state.formErrors;
+    let emailValid = this.state.emailValid;
+    let passwordValid = this.state.passwordValid;
+
+    switch(fieldName) {
+      case 'email':
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+        break;
+      case 'password':
+        passwordValid = value.length >= 6;
+        fieldValidationErrors.password = passwordValid ? '': ' is too short';
+        break;
+      default:
+        break;
+    }
+    this.setState({formErrors: fieldValidationErrors,
+                    emailValid: emailValid,
+                    passwordValid: passwordValid
+                  }, this.validateForm);
+  }
+
+  validateForm() {
+    this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+  }
+
+  errorClass(error) {
+    return(error.length === 0 ? '' : 'has-error');
+  }
+
+
+
+
+
+
   componentDidMount() {
     Firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -21,7 +66,11 @@ class Login extends React.Component {
       email: '',
       password: '',
       currentUser: null,
-      message: ''
+      message: '',
+      formErrors: {email: '', password: ''},
+      emailValid: false,
+      passwordValid: false,
+      formValid: false
     }
   }
 
@@ -73,22 +122,28 @@ class Login extends React.Component {
           <Header as='h2' color='teal' textAlign='center'>
             <Image src='https://react.semantic-ui.com/logo.png' /> Log-in to your account
           </Header>
+          <div className="panel panel-default">
+          <FormErrors formErrors={this.state.formErrors} />
+        </div>
           <Form size='large' onSubmit={this.onSubmit}>
+            
             <Segment stacked>
               {message ? <p className="ui negative message">Wrong Username or Password.</p> : null}
               <Form.Input fluid 
+                          name= 'email'
                           icon='user' 
                           iconPosition='left' 
                           placeholder='E-mail address'
                           value={this.state.email}
-                          onChange={this.onEmailChange} />
+                          onChange={this.handleUserInput} />
               <Form.Input fluid
+                          name= 'password'
                           icon='lock'
                           iconPosition='left'
                           placeholder='Password'
                           type='password'
                           value={this.state.password}
-                          onChange={this.onPasswordChange}/>
+                          onChange={this.handleUserInput}/>
               <Button color='teal' fluid size='large' type='submit'>
                 Login
               </Button>
