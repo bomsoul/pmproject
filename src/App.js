@@ -11,6 +11,7 @@ import Edit from './view/Edit';
 import ShowParent from './view/ShowParent';
 import Pick from './view/Pick';
 import Login from './view/Login';
+import Signup from './view/Signup';
 import Firebase from 'firebase';
 
 var user = Firebase.auth().currentUser;
@@ -53,7 +54,12 @@ class App extends Component {
       )
     }
     return(
-      <Login/>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </Switch>
+      </Router>
   )
 }
 }

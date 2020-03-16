@@ -8,7 +8,7 @@ class Home extends Component {
         super(props);
         this.state = {
             data: [],
-            item: []
+            item: [],
          };
     }
 
@@ -36,7 +36,7 @@ class Home extends Component {
             Json.forEach(doc=>{
                 this.setState({
                 data: [...this.state.data,doc],
-                item: [...this.state.data,doc]
+                item: [...this.state.data,doc],
             })
             })
 

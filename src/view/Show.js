@@ -66,8 +66,8 @@ class Show extends Component{
                     </Card.Content>
                     <Card.Content extra>
                         <div className='ui two buttons'>
-                        <a  href={'/edit/'+ this.props.match.params.id} class="ui yellow basic button">Edit Profile</a>
-                        <a  href={'/addparent/'+ this.props.match.params.id} class="ui violet basic button">AddParent</a>
+                        <Link  to={'/edit/'+ this.props.match.params.id} class="ui yellow basic button">Edit Profile</Link>
+                        <Link  to={'/addparent/'+ this.props.match.params.id} class="ui violet basic button">AddParent</Link>
                         </div>
                     </Card.Content>
                 </Card>
