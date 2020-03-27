@@ -119,13 +119,13 @@ class Login extends React.Component {
       <Router>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
-            <Image src='https://react.semantic-ui.com/logo.png' /> Log-in to your account
+          <Header as='h2' color='ui positive  ' textAlign='center'>
+            <Image src='images/KU_Logo.png' /> Log in to your Account
           </Header>
           <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
         </div>
-          <Form size='large' onSubmit={this.onSubmit}>
+          <Form size='large' onSubmit={this.onSubmit} >
             
             <Segment stacked>
               {message ? <p className="ui negative message">Wrong Username or Password.</p> : null}
@@ -144,12 +144,12 @@ class Login extends React.Component {
                           type='password'
                           value={this.state.password}
                           onChange={this.handleUserInput}/>
-              <Button color='teal' fluid size='large' type='submit'>
+              <Button color="ui positive button" fluid size='large' type='submit'>
                 Login
               </Button>
             </Segment>
             <Message>
-              New to us? <Link to='/signup'>Sign Up</Link>
+              New for us? <Link to='/signup'> Sign Up</Link>
             </Message>
           </Form>
         </Grid.Column>

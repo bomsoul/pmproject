@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Questrial&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,145 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+#join-parent{
+  
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Questrial', sans-serif;
+  color:#8d8686;
+}
+
+
+form label:after
+{
+    color: red;
+    content: " *";
+}
+
+.ku-logo-signup{
+  height: 49px;
+  width: 49px;
+  margin-right: 50px;
+  margin-left: 55px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.sign-up-content-h4{
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Questrial', sans-serif;
+}
+
+.sign-up-content-p{
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Questrial', sans-serif;
+  color: grey;
+}
+
+
+
+.text_1 {
+  animation: text1;
+}
+
+.text_2 {
+  animation: text2;
+  
+}
+
+.text_1, .text_2 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  animation-duration: 20s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+}
+
+.text_1::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes text2 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  
+  60%, 90% {
+    width: 21.2em;
+  }
+}
+
+@keyframes text1 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 17em;
+  }
+}
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+.social-media{
+  margin-top: 40px;
+  margin-left: 120px;
+}
+
+.home-menu{
+  margin-top: 20px;
+  margin-right: -1px;
+}
+
+.student-content{
+  margin-left: 15px;
+  
+}
+
+
+
+
+
+
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 150px;
+  margin-left: 470px;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  
+} 
+
+
+.img-edit-student{
+  margin-bottom: 10px;
+  margin-left: 500px;
+  margin-top: 5px;
 }

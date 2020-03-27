@@ -45,19 +45,23 @@ class Show extends Component{
     render(){
         return(
             <div>
+                <br></br>
+                <h1> {this.state.name}  Profile.</h1>
+              
                 <Card fluid>
                     <Card.Content>
                         <Image fluid
                         src={this.state.imageURL}
                         />
+                        <br></br><br></br><br></br>
                         <Card.Header>{this.state.name}</Card.Header>
                         <Card.Meta>{this.state.stdId}</Card.Meta>
                         <Card.Description>
-                        Email: {this.state.email}
+                        <i class="mail icon"></i>Email:  {this.state.email}
                         <br/>
-                        {this.state.address}
+                        <i class="marker icon"></i>Address:  {this.state.address}
                         <br/>
-                        Parent: {this.state.parent.map((key, index) =>
+                        <i class="user icon"></i> Parent: {this.state.parent.map((key, index) =>
                             
                                 <li><Link to={'/showparent/'+ key.id}>{key.data().name}</Link></li>
                         )}

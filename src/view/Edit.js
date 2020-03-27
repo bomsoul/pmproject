@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Firebase from '../Firebase';
 import { Button, Card, Image, Form, Input } from 'semantic-ui-react';
-
+import ExampleComponent from "react-rounded-image";
 class Edit extends Component{
 
     constructor(props) {
@@ -61,16 +61,31 @@ class Edit extends Component{
     render() {
         return (
             <div>
+
+                <br></br>
+                <h1>Change Student Information.</h1>
                 <Form onSubmit={this.handleSubmit}>
                 <Card fluid>
                     <Card.Content>
-                        <Image
+                        {/* <Image
                         floated='right'
                         size='mini'
                         src={this.state.imageURL}
-                        />
-                        <Card.Header>Edit Student Info</Card.Header>
-                        <Card.Meta>Student ID :{this.state.stdId}</Card.Meta>
+                        /> */}
+                        <div class="img-edit-student">
+                        <ExampleComponent
+                                    image={this.state.imageURL}
+                                    roundedColor="#006b67"
+                                    imageWidth="80"
+                                    imageHeight="80"
+                                    roundedSize="6"
+                                    
+
+                                    />
+                        </div>
+                        <Card.Header>Edit  personal profile</Card.Header>
+                        <Card.Meta>Name :{this.state.name}</Card.Meta>
+                        <Card.Meta>ID :{this.state.stdId}</Card.Meta>
                         <Card.Description>
                         <Form.Field
                                 id='form-input-control-first-name'

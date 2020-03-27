@@ -149,13 +149,33 @@ class AddParent extends Component{
     
         return (
           <div>
-              <Image src={this.state.stdImage} size='medium' centered />
-            <input
-              id="myFileUpload"
-              type="file"
-              onChange={this.handleFileChange}
-              accept=".jpg, .jpeg, .png"
-            />
+
+            <br></br>
+            <Image src={this.state.stdImage} size='medium' centered />
+
+              <br></br>
+            <h1>Add Parent to Student.</h1>
+            <h3>Upload Image to add parent</h3>
+
+
+           
+
+            <div class="ui placeholder segment">
+                  <div class="ui icon header">
+                  <i class="file image icon"></i>
+                    Attach image file in listed.
+                  </div>
+                  <div class="fileUpload btn btn-outline-success">
+                  <span>Upload</span>
+                 
+                  <input type="file" class="upload" 
+                  id="myFileUpload"
+                  type="file"
+                  onChange={this.handleFileChange}
+                  accept=".jpg, .jpeg, .png"/>
+              </div>
+          </div>
+
             <div style={{ position: 'relative' }}>
               <div style={{ position: 'absolute' }}>
               <Image src={imageURL} />

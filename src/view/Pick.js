@@ -42,6 +42,9 @@ class Pick extends Component{
     render(){
         return(
             <div>
+                <br></br>
+                <h1>Pick Up Children to Parent.</h1>
+                <br></br><br></br><br></br>
                 <div class="ui one column stackable center aligned page grid">
                     <div class="column twelve wide">
                         <Grid columns={2}>

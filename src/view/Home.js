@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Firebase from '../Firebase';
 import {Link} from 'react-router-dom';
 import { Item, Button } from 'semantic-ui-react';
+import ExampleComponent from "react-rounded-image";
 
 class Home extends Component {
     constructor(props) {
@@ -65,7 +66,7 @@ class Home extends Component {
         return(
             <div>
                 <br/>
-                <div class="ui one column stackable center aligned page grid">
+                <div className="ui one column stackable center aligned page grid">
                     <div class="column twelve wide">
                         <div className="ui icon input">
                             <input  type="text" 
@@ -76,33 +77,61 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                
                 {
                     this.state.item.map((key,index)=>
-                        <div>
+                        <div class="ui three column grid">
+                            <div class="row">
+                            <div class="column">
                             <Item.Group>
                                 <Item>
-                                <Item.Image size='tiny' src={key.imageURL} />
 
-                                <Item.Content>
+                                {/* <Item.Image size='tiny' src={key.imageURL}/> */}
+                                <ExampleComponent
+                                    image={key.imageURL}
+                                    roundedColor="#006b67"
+                                    imageWidth="120"
+                                    imageHeight="120"
+                                    roundedSize="10"
+                                    />
+                                   
+                                    <Item.Content>
+                                    
                                     <Item.Header as='a'>{key.name}</Item.Header>
+                                    <div className="student-content">
                                     <Item.Meta>Student ID: {key.stdId}</Item.Meta>
                                     <Item.Description>
                                     {key.address}
                                     </Item.Description>
                                     <Item.Extra> 
                                         <Link to={'/show/'+key.id}>
-                                            <Button inverted color='blue'>
-                                                Show Profile
+                                            <Button inverted color='green' >
+                                                View Profile
                                             </Button>
                                         </Link>
                                     </Item.Extra>
+                                    </div>
                                 </Item.Content>
+                                
                                 </Item>
                             </Item.Group>
                         </div>
+                        </div>
+                        </div>
                     )
                 }
-            </div>
+
+
+  
+
+
+
+
+</div>
+
+
+
+
         )
     }
 }

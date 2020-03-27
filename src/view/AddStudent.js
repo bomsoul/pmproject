@@ -147,12 +147,34 @@ class AddStudent extends Component{
     
         return (
           <div>
-            <input
-              id="myFileUpload"
-              type="file"
-              onChange={this.handleFileChange}
-              accept=".jpg, .jpeg, .png"
-            />
+
+
+            <br></br>
+            <h1>Add Student.</h1>
+
+           
+  
+          <h3>Upload Image to add student</h3>
+          <div class="ui placeholder segment">
+                  <div class="ui icon header">
+                  <i class="file image icon"></i>
+                    Attach image file in listed.
+                  </div>
+                  <div class="fileUpload btn btn-outline-success">
+                  <span>Upload</span>
+                 
+                  <input type="file" class="upload" 
+                  id="myFileUpload"
+                  type="file"
+                  onChange={this.handleFileChange}
+                  accept=".jpg, .jpeg, .png"/>
+              </div>
+          </div>
+
+
+            
+
+           
             <div style={{ position: 'relative' }}>
               <div style={{ position: 'absolute' }}>
               <Image src={imageURL} />
