@@ -80,6 +80,7 @@ class Header extends Component {
           <Link to="/"  >
           <Menu.Item
                 name='home'
+                active={this.state.activeItem === 'home'}
                 onClick={this.handleItemClick}
             />
           </Link>
@@ -88,15 +89,33 @@ class Header extends Component {
         
      
           
-        <a class="active item"  href="/detect" active={this.state.activeItem === 'detect'}
+        {/* <a class="active item"  href="/detect" active={this.state.activeItem === 'detect'}
             onClick={this.handleItemClick}>
             Detect
-        </a>
+        </a> */}
+        <div className="home-menu ">
+        <Link to="/detect"  >
+          <Menu.Item
+                name='detect'
+                active={this.state.activeItem === 'detect'}
+                onClick={this.handleItemClick}
+            />
+          </Link>
+        </div>
 
-        <a class="active item" href="/addstudent" active={this.state.activeItem === 'add student'}
+        {/* <a class="active item" href="/addstudent" active={this.state.activeItem === 'add student'}
             onClick={this.handleItemClick}>
             Add Student
-        </a>
+        </a> */}
+        <div class="home-menu">
+        <Link to="/addstudent"  >
+          <Menu.Item
+                name='add student'
+                active={this.state.activeItem === 'add student'}
+                onClick={this.handleItemClick}
+            />
+          </Link>
+        </div>
 
          
 
