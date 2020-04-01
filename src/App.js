@@ -11,6 +11,7 @@ import Edit from './view/Edit';
 import ShowParent from './view/ShowParent';
 import Pick from './view/Pick';
 import Login from './view/Login';
+import Line from './api/line'
 import Signup from './view/Signup';
 import Firebase from 'firebase';
 
@@ -61,7 +62,8 @@ class App extends Component {
               <Route path="/edit/:id" component={Edit}/>
               <Route path="/showparent/:id" component={ShowParent}/>
               <Route path="/pick/:id" component={Pick}/>
-              
+              <Route path="/line/" component={Line}/>
+
             </Switch>
 
            
