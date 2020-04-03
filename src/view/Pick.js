@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Firebase from '../Firebase';
 import { Grid, Image } from 'semantic-ui-react';
-
+import ExampleComponent from "react-rounded-image";
 class Pick extends Component{
 
     constructor(props) {
@@ -59,21 +59,43 @@ class Pick extends Component{
                             this.state.std_data.map((key,index)=>
                             <Grid columns={2}>
                             <Grid.Column>
-                            <Image
-                                fluid size='small'
-                                src={this.state.parent_url}
+
+                            <div class="parent-match-pick">
+                      
+
+                            <ExampleComponent
+                                    image={this.state.parent_url}
+                                    roundedColor="#daa520"
+                                    imageWidth="180"
+                                    imageHeight="180"
+                                    roundedSize="17"
                             />
+
+                            <div class="parent-match-pick-name">
+                            <br></br>
                             <p>Name: {this.state.parent_name}</p>
+                            </div>
+                            </div>
 
                             </Grid.Column>
 
                             <Grid.Column>
-                            <Image
-                                fluid size='small'
-                                src={key.imageURL}
+                            <div class="student-match-pick">
+                           
+
+                            <ExampleComponent
+                                    image={key.imageURL}
+                                    roundedColor="#006b67"
+                                    imageWidth="180"
+                                    imageHeight="180"
+                                    roundedSize="17"
                             />
+                            <div class="parent-match-pick-name">
+                            <br></br>
                             <p>Name: {key.name}</p>
-                            <p>Student ID : {key.stdId}</p>
+                            <p>ID: {key.stdId}</p>
+                            </div>
+                            </div>
                             </Grid.Column>
                         </Grid>
                         )
