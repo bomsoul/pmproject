@@ -179,3 +179,16 @@ form label:after
   margin-left: 500px;
   margin-top: 5px;
 }
+
+
+.parent-match-pick{
+  margin-left: 50px;
+}
+
+.student-match-pick{
+  margin-left: 50px;
+}
+
+.parent-match-pick-name{
+  margin-right: 35px;
+}
