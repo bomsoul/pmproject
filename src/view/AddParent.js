@@ -174,11 +174,14 @@ class AddParent extends Component{
                   onChange={this.handleFileChange}
                   accept=".jpg, .jpeg, .png"/>
               </div>
+              <div class="image-upload-addstudent">
+              <Image fluid size='medium'src={imageURL} />
+              </div>
           </div>
 
             <div style={{ position: 'relative' }}>
               <div style={{ position: 'absolute' }}>
-              <Image src={imageURL} />
+              {/* <Image src={imageURL} /> */}
               {
                   this.state.fullDesc == null ? <p></p>: 
                   
