@@ -134,8 +134,8 @@ class Signup extends Component{
               <span class="text_1">Hi, User do you have an Account?</span><span class="text_2">Create your Account.</span>
               </h1></center>
               <h3>Getting started with Parent Face</h3>
-              <h4 class="sign-up-content-h4">Sign up an account to Parent Face - A simple way to help parents pick their kids !</h4>
-              <p class ="sign-up-content-p">Just have your account and take a face scan then they will connect to family.</p>
+              <h4 className="sign-up-content-h4">Sign up an account to Parent Face - A simple way to help parents pick their kids !</h4>
+              <p className ="sign-up-content-p">Just have your account and take a face scan then they will connect to family.</p>
               <br></br>
               <FormErrors formErrors={this.state.formErrors} />
               <Form size='large' onSubmit={this.onSubmit} >
@@ -163,22 +163,22 @@ class Signup extends Component{
 
 
 
-<div class="social-media">
+<div className="social-media">
   
-<button class="ui facebook button">
-  <i class="facebook icon"></i>
+<button className="ui facebook button">
+  <i className="facebook icon"></i>
   Facebook
 </button>
 
 
-<button class="ui linkedin button">
-  <i class="linkedin icon"></i>
+<button className="ui linkedin button">
+  <i className="linkedin icon"></i>
   LinkedIn
 </button>
 
 
-<button class="ui red button"  >
-  <i class="google icon"></i>
+<button className="ui red button"  >
+  <i className="google icon"></i>
   Sign up with Google
 </button>
 </div>

@@ -74,7 +74,7 @@ class App extends Component {
             </Router>
 
             
-            <div class="footer" id="footer" > 
+            <div className="footer" id="footer" > 
             <Footer
               columns={[
                 {

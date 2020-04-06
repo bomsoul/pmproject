@@ -79,14 +79,14 @@ class Header extends Component {
       
 
      
-      <div class="ui large menu">
+      <div className="ui large menu">
         
 
 
         
         
          <div>
-                <img class="ku-logo-signup" src='images/KU_Logo.png'></img>
+                <img className="ku-logo-signup" src='images/KU_Logo.png'></img>
          </div>
         
          
@@ -122,7 +122,7 @@ class Header extends Component {
             onClick={this.handleItemClick}>
             Add Student
         </a> */}
-        <div class="home-menu">
+        <div className="home-menu">
         <Link to="/addstudent"  >
           <Menu.Item
                 name='add student'
@@ -138,10 +138,10 @@ class Header extends Component {
           
        
        
-  <div class="right menu">
+  <div className="right menu">
     
   
-    <div class="item">
+    <div className="item">
     
     <Dropdown text='Menu'>
      <Dropdown.Menu>

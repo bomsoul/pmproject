@@ -72,7 +72,7 @@ class Edit extends Component{
                         size='mini'
                         src={this.state.imageURL}
                         /> */}
-                        <div class="img-edit-student">
+                        <div className="img-edit-student">
                         <ExampleComponent
                                     image={this.state.imageURL}
                                     roundedColor="#006b67"

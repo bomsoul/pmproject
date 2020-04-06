@@ -45,8 +45,8 @@ class Pick extends Component{
                 <br></br>
                 <h1>Pick Up Children to Parent.</h1>
                 <br></br><br></br><br></br>
-                <div class="ui one column stackable center aligned page grid">
-                    <div class="column twelve wide">
+                <div className="ui one column stackable center aligned page grid">
+                    <div className="column twelve wide">
                         <Grid columns={2}>
                             <Grid.Column>
                                 <h2>Parent</h2>
@@ -71,7 +71,7 @@ class Pick extends Component{
                                     roundedSize="17"
                             />
 
-                            <div class="parent-match-pick-name">
+                            <div className="parent-match-pick-name">
                             <br></br>
                             <p>Name: {this.state.parent_name}</p>
                             </div>
@@ -80,7 +80,7 @@ class Pick extends Component{
                             </Grid.Column>
 
                             <Grid.Column>
-                            <div class="student-match-pick">
+                            <div className="student-match-pick">
                            
 
                             <ExampleComponent
@@ -90,7 +90,7 @@ class Pick extends Component{
                                     imageHeight="180"
                                     roundedSize="17"
                             />
-                            <div class="parent-match-pick-name">
+                            <div className="parent-match-pick-name">
                             <br></br>
                             <p>Name: {key.name}</p>
                             <p>ID: {key.stdId}</p>

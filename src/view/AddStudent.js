@@ -155,8 +155,8 @@ class AddStudent extends Component{
            
   
           <h3>Upload Image to add student</h3>
-          <div class="ui placeholder segment">
-                  <div class="ui icon header">
+          <div className="ui placeholder segment">
+                  <div className="ui icon header">
                   
                   <i class="file image icon"></i>
                     Attach image file in listed.
@@ -164,7 +164,7 @@ class AddStudent extends Component{
                     Status: {this.state.fullDesc===null? <i style={{color: "red"}} className="times icon"></i>: <i style={{color: "green"}} className="check icon"></i>}
                   </div>
                   
-                  <div class="fileUpload btn btn-outline-success">
+                  <div className="fileUpload btn btn-outline-success">
                   
                   <span>Upload</span>
                  
@@ -175,7 +175,7 @@ class AddStudent extends Component{
                   accept=".jpg, .jpeg, .png"/>
                    
               </div>
-              <div class="image-upload-addstudent">
+              <div className="image-upload-addstudent">
               <Image fluid size='medium' src={imageURL} />
               </div>
           </div>

@@ -47,15 +47,22 @@ class Show extends Component{
             <div>
                 <br></br>
                 <h1> {this.state.name}  Profile.</h1>
-              
-                <Card fluid>
+                <center>
+                <div className="card-items">
+                <Card fluid >
                     <Card.Content>
-                        <Image fluid size='medium'
+                        <div className="profile-image">
+                        <div id="demo-image">
+                        <Image fluid size='huge'
                         src={this.state.imageURL}
                         />
-                        <br></br><br></br><br></br>
+                        </div>
+
+                        <div id="demo-text">
                         <Card.Header>{this.state.name}</Card.Header>
+                        <br></br>
                         <Card.Meta>{this.state.stdId}</Card.Meta>
+                        <br></br>
                         <Card.Description>
                         <i class="mail icon"></i>Email:  {this.state.email}
                         <br/>
@@ -67,14 +74,41 @@ class Show extends Component{
                         )}
                         
                         </Card.Description>
+                        </div>
+                        </div>
+                        <br></br><br></br><br></br>
+
+                        <div className="card-student-profile-info">
+                       
+                        {/* <Card.Header>{this.state.name}</Card.Header>
+                        <Card.Meta>{this.state.stdId}</Card.Meta>
+                        <Card.Description>
+                        <i class="mail icon"></i>Email:  {this.state.email}
+                        <br/>
+                        <i class="marker icon"></i>Address:  {this.state.address}
+                        <br/>
+                        <i class="user icon"></i> Parent: {this.state.parent.map((key, index) =>
+                            
+                                <li><Link to={'/showparent/'+ key.id}>{key.data().name}</Link></li>
+                        )}
+                        
+                        </Card.Description> */}
+                        </div>
+                        
                     </Card.Content>
+                    
                     <Card.Content extra>
+                        
                         <div className='ui two buttons'>
                         <Link  to={'/edit/'+ this.props.match.params.id} class="ui yellow basic button">Edit Profile</Link>
                         <Link  to={'/addparent/'+ this.props.match.params.id} class="ui violet basic button">AddParent</Link>
                         </div>
+                        
                     </Card.Content>
+
                 </Card>
+                </div>
+                </center>
             </div>
         )
     }

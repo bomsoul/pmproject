@@ -67,7 +67,7 @@ class Home extends Component {
             <div>
                 <br/>
                 <div className="ui one column stackable center aligned page grid">
-                    <div class="column twelve wide">
+                    <div className="column twelve wide">
                         <div className="ui icon input">
                             <input  type="text" 
                                     placeholder="Search..."
@@ -80,9 +80,9 @@ class Home extends Component {
                 
                 {
                     this.state.item.map((key,index)=>
-                        <div class="ui three column grid">
-                            <div class="row">
-                            <div class="column">
+                        <div className="ui three column grid">
+                            <div className="row">
+                            <div className="column">
                             <Item.Group>
                                 <Item>
 

@@ -196,3 +196,31 @@ form label:after
 .image-upload-addstudent{
   margin-left: 400px;
 }
+
+.card-student-profile-info{
+  
+  margin-left: 700px;
+  /* float: right; */
+
+}
+
+.profile-image{
+  
+}
+
+#demo-image {
+  /* float: left ; */
+   
+}
+
+#demo-text {
+  /* float: left ; */
+  margin-left: 50px;
+  margin-top: 50px;
+  font-size: x-large;
+  text-align: left;
+}
+.card-items{
+  width: 50%;
+  
+}
