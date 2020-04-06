@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { Form, Input, TextArea, Button } from 'semantic-ui-react'
 import { FormErrors } from './FormErrors';
+import Firebase from '../Firebase';
 
 class Signup extends Component{
     
@@ -9,6 +10,27 @@ class Signup extends Component{
     const value = e.target.value;
     this.setState({[name]: value},
                   () => { this.validateField(name, value) });
+  }
+
+  
+  onSubmit = e => {
+    e.preventDefault()
+    const { email, password } = this.state
+    Firebase.auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(response => {
+        this.setState({
+          currentUser: response.user
+        })
+        console.log("pass");
+      })
+      .catch(error => {
+        this.setState({
+          message: error.message,
+          password: ''
+        })
+      })
+
   }
 
   validateField(fieldName, value) {
@@ -116,29 +138,25 @@ class Signup extends Component{
               <p class ="sign-up-content-p">Just have your account and take a face scan then they will connect to family.</p>
               <br></br>
               <FormErrors formErrors={this.state.formErrors} />
-              <Form>
-                  
-                  <Form.Field
-                      id='form-input-control-error-email'
-                      control={Input}
-                      label='Email'
-                      placeholder='ex: your.email@gmail.com'
-                      name ="email"
-                      value={this.state.email}
-                        onChange={this.handleUserInput} />
-                      
-                  <Form.Field
-                      id='form-input-control-last-name'
-                      control={Input}
-                      label='Password'
-                      placeholder='enter password'
-                  />
-                  <Form.Field
-                      
-                      id='form-button-control-public'
-                      control={Button}
-                      content='Register'
-                      />
+              <Form size='large' onSubmit={this.onSubmit} >
+              <Form.Input fluid 
+                          name= 'email'
+                          icon='user' 
+                          iconPosition='left' 
+                          placeholder='E-mail address'
+                          value={this.state.email}
+                          onChange={this.handleUserInput} />
+              <Form.Input fluid
+                          name= 'password'
+                          icon='lock'
+                          iconPosition='left'
+                          placeholder='Password'
+                          type='password'
+                          value={this.state.password}
+                          onChange={this.handleUserInput}/>
+                  <Button color="ui positive button" fluid size='large' type='submit'>
+                Register
+              </Button>
 </Form>
 </div>
 
