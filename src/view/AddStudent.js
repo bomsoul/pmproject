@@ -160,7 +160,10 @@ class AddStudent extends Component{
                   
                   <i class="file image icon"></i>
                     Attach image file in listed.
+                    <br/>
+                    Status: {this.state.fullDesc===null? <i style={{color: "red"}} className="times icon"></i>: <i style={{color: "green"}} className="check icon"></i>}
                   </div>
+                  
                   <div class="fileUpload btn btn-outline-success">
                   
                   <span>Upload</span>
@@ -176,14 +179,6 @@ class AddStudent extends Component{
               <Image fluid size='medium' src={imageURL} />
               </div>
           </div>
-
-
-            
-
-           
-            <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute' }}>
-              {/* <Image fluid size='medium' src={imageURL} /> */}
               {
                   this.state.fullDesc == null ? <p></p>: 
                   
@@ -229,13 +224,10 @@ class AddStudent extends Component{
                                     value={this.state.address} ></textarea>
                         </div>
                         <button onClick={this.handleUpload} className="btn btn-success">Add to Database</button>
-                  </div>
+                      </div>
                   </div>
                   }
             </div>
-            {!!drawBox ? drawBox : null}
-          </div>
-        </div>
         );
       }
 }

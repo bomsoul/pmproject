@@ -19,6 +19,21 @@ class Header extends Component {
       window.location.href = "/";
     }
 
+    signup = e => {
+      e.preventDefault()
+      Firebase.auth().signOut().then(response => {
+        this.setState({
+          currentUser: null
+        })
+      })
+      window.location.href = "/signup";
+    }
+
+
+
+
+ 
+
     render() { 
         
         return(
@@ -128,8 +143,52 @@ class Header extends Component {
   
     <div class="item">
     
-    <a href="/"> <div  class="negative ui button" active={this.state.activeItem === 'logout'}
-              onClick={this.logout} >Sign out</div> </a>
+    {/* <a href="/"> <div  class="negative ui button" active={this.state.activeItem === 'logout'}
+              onClick={this.logout} >Sign out</div> </a> */}
+
+              <div class="dropdown-list" >
+              {/* <div class="ui right pointing dropdown icon button" id="select">
+                    <i class="settings icon"></i>
+                    <div class="menu">
+                      
+                      
+                      <div class="item">
+                        <div class="ui red empty circular label"></div>
+                        Important
+                      </div>
+                      <div class="item">
+                        <div class="ui blue empty circular label"></div>
+                        Announcement
+                      </div>
+                      <div class="item">
+                        <div class="ui black empty circular label"></div>
+                        Discussion
+                      </div> */}
+
+
+                    {/* </div> */}
+                  {/* </div> */}
+                  <div class="dropdown">
+    <button type="button" class="btn btn-outline-secondary  dropdown-toggle" data-toggle="dropdown">
+    <i class="settings icon"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" >
+    <a class="dropdown-item"  href="/"><div   active={this.state.activeItem === 'logout'}
+              onClick={this.logout} >Log in</div></a>
+     <a class="dropdown-item"  href="/signup"><div   active={this.state.activeItem === 'signup'}
+              onClick={this.signup} >Sign in</div></a>
+      
+      <a class="dropdown-item"  href="/"><div   active={this.state.activeItem === 'logout'}
+              onClick={this.logout} >Sign out</div></a>
+      
+    </div>
+  </div>
+
+
+
+
+
+  </div>
   
               
               

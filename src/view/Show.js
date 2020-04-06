@@ -50,7 +50,7 @@ class Show extends Component{
               
                 <Card fluid>
                     <Card.Content>
-                        <Image fluid
+                        <Image fluid size='medium'
                         src={this.state.imageURL}
                         />
                         <br></br><br></br><br></br>
