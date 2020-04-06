@@ -105,7 +105,7 @@ class Signup extends Component{
               
         </div> */}
          
-         <div class="ui large menu">
+         {/* <div class="ui large menu">
          <div>
                 <img class="ku-logo-signup" src='images/KU_Logo.png'></img>
                 </div>
@@ -123,7 +123,7 @@ class Signup extends Component{
     <a href="/signup">   <div class="ui primary button">Sign Up</div> </a>
     </div>
   </div>
-</div>
+</div> */}
 
 
           <div className="ui container">
