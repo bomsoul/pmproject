@@ -63,6 +63,7 @@ class App extends Component {
               <Route path="/showparent/:id" component={ShowParent}/>
               <Route path="/pick/:id" component={Pick}/>
               <Route path="/line/" component={Line}/>
+              <Route path="/signup" component={Signup} />
 
             </Switch>
 

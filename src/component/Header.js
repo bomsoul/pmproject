@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import{Link} from 'react-router-dom';
-import { Menu, Button, MenuMenu } from 'semantic-ui-react';
+import { Menu, Button, MenuMenu,Dropdown } from 'semantic-ui-react';
 import Firebase from 'firebase';
 class Header extends Component {
     constructor(props) {
@@ -18,6 +18,21 @@ class Header extends Component {
       })
       window.location.href = "/";
     }
+
+    signup = e => {
+      e.preventDefault()
+      Firebase.auth().signOut().then(response => {
+        this.setState({
+          currentUser: null
+        })
+      })
+      window.location.href = "/signup";
+    }
+
+
+
+
+ 
 
     render() { 
         
@@ -128,9 +143,14 @@ class Header extends Component {
   
     <div class="item">
     
-    <a href="/"> <div  class="negative ui button" active={this.state.activeItem === 'logout'}
-              onClick={this.logout} >Sign out</div> </a>
-  
+    <Dropdown text='Menu'>
+     <Dropdown.Menu>
+     <Dropdown.Item text='Logout' icon='logout' onClick={this.logout} />
+     
+      <Dropdown.Item text='Signup' icon='signup' as={Link} to="/signup"/>
+     </Dropdown.Menu>
+
+   </Dropdown>
               
               
               

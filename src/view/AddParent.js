@@ -164,6 +164,8 @@ class AddParent extends Component{
                   <div class="ui icon header">
                   <i class="file image icon"></i>
                     Attach image file in listed.
+                    <br/>
+                    Status: {this.state.fullDesc===null? <i style={{color: "red"}} className="times icon"></i>: <i style={{color: "green"}} className="check icon"></i>}
                   </div>
                   <div class="fileUpload btn btn-outline-success">
                   <span>Upload</span>
@@ -174,11 +176,10 @@ class AddParent extends Component{
                   onChange={this.handleFileChange}
                   accept=".jpg, .jpeg, .png"/>
               </div>
+              <div class="image-upload-addstudent">
+              <Image fluid size='medium'src={imageURL} />
+              </div>
           </div>
-
-            <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute' }}>
-              <Image src={imageURL} />
               {
                   this.state.fullDesc == null ? <p></p>: 
                   
@@ -221,9 +222,6 @@ class AddParent extends Component{
                   </div>
                   }
             </div>
-            {!!drawBox ? drawBox : null}
-          </div>
-        </div>
         );
       }
 }
