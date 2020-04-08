@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Form, Input, TextArea, Button } from 'semantic-ui-react'
+import { Form, Button } from 'semantic-ui-react'
 import { FormErrors } from './FormErrors';
 import Firebase from '../Firebase';
 

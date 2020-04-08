@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Firebase from '../Firebase';
-import { Button, Card, Image, Form, Input } from 'semantic-ui-react';
+import { Button, Card, Form, Input } from 'semantic-ui-react';
 import ExampleComponent from "react-rounded-image";
 class Edit extends Component{
 

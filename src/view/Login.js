@@ -1,7 +1,7 @@
 import React from 'react';
 import Firebase from '../Firebase';
 import App from '../App';
-import { BrowserRouter as Router,Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 import { FormErrors } from './FormErrors';
 

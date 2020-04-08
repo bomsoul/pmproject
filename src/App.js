@@ -18,7 +18,6 @@ import Firebase from 'firebase';
 
 import Footer from 'rc-footer';
 import 'rc-footer/assets/index.css'; 
-import { render } from 'react-dom';
 
 var user = Firebase.auth().currentUser;
 class App extends Component {
